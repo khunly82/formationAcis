@@ -1,0 +1,12 @@
+<p>{{ compteur | timer : false }}</p>
+<div>
+  <p-button label="Start"
+            severity="success"
+            icon="pi pi-play" (onClick)="start()"></p-button>
+  <p-button label="Stop"
+            severity="danger"
+            icon="pi pi-stop" (onClick)="stop()"></p-button>
+  <p-button label="Reset"
+            severity="help"
+            icon="pi pi-refresh" (onClick)="reset()"></p-button>
+</div>

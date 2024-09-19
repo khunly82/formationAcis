@@ -1,0 +1,13 @@
+@keyframes appearing {
+  0% { margin-left: -1000px }
+  100% { margin-left: 0 }
+}
+li {
+  animation-name: appearing;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+button.red {
+  background-color: red;
+}

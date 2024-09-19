@@ -1,0 +1,38 @@
+
+
+
+<p>hello {{ nom | uppercase }}
+  , je suis né le
+  {{ dateNaissance | date : 'dd/MM/yyyy' }} !!</p>
+
+<p>nb : {{ nb | number : '0.0-2' }}</p>
+
+<p *ngIf="isAdmin;else otherTemplate">Visible par les admins</p>
+<ng-template #otherTemplate>
+  <p>Visible par les non admin</p>
+</ng-template>
+
+@if(isAdmin) {
+  <p>Visible par les admins</p>
+} @else {
+  <p>Visible par les non admin</p>
+}
+
+<ul>
+  <li *ngFor="let ing of ingredients; let i = index">
+    {{ i }} {{ ing }}
+  </li>
+</ul>
+
+
+<ul>
+  @for(ing of ingredients; track ing) {
+    <li>{{ $index }} {{ ing }}</li>
+  }
+</ul>
+
+<button [ngClass]="{ red: isAdmin }"
+        [disabled]="false"
+        (click)="onBtnClick()">Click Me !!</button>
+
+
