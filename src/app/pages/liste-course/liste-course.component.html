@@ -4,12 +4,12 @@
       <input pInputText [(ngModel)]="nomArticle"/>
       <label>Nom de l'article</label>
     </p-floatLabel>
-    <p-button severity="info" icon="pi pi-plus" (onClick)="ajouter()"></p-button>
+    <p-button #button severity="info" icon="pi pi-plus" (onClick)="ajouter()"></p-button>
   </div>
   <div>
     <p-checkbox [binary]="true" label="Est important" [(ngModel)]="estImportant"></p-checkbox>
   </div>
-  <p-table [value]="articles">
+  <p-table [value]="articles()">
     <ng-template pTemplate="header">
       <tr>
         <th>Nom de l'article</th>
