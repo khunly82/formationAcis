@@ -1,0 +1,9 @@
+<ng-template #myTemplate>
+  <p>Ce template n'est pas affiché par défaut</p>
+</ng-template>
+
+<p>On peut alors utilser une directives structurelles pout l'afficher (*ngIf, *ngFor, *ngTemplateOutlet, ...)</p>
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+<p>À différents endroits</p>
+<!--autre syntaxe-->
+<ng-container [ngTemplateOutlet]="myTemplate"></ng-container>

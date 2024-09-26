@@ -1,0 +1,16 @@
+<p-card [header]="compteur | timer : true">
+  <div class="flex gap-2">
+    <p-button label="Start"
+              severity="success"
+              icon="pi pi-play" (onClick)="start()"
+              [disabled]="!!idInterval"></p-button>
+    <p-button label="Stop"
+              severity="danger"
+              icon="pi pi-stop" (onClick)="stop()"
+              [disabled]="!idInterval"></p-button>
+    <p-button label="Reset"
+              severity="help"
+              icon="pi pi-refresh" (onClick)="reset()"
+              [disabled]="compteur === 0"></p-button>
+  </div>
+</p-card>

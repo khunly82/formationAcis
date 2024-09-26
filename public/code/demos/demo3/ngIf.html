@@ -1,0 +1,6 @@
+<!--nécessite CommonModule ou la directive ngIf-->
+<p *ngIf="condition; else otherTemplate">Apparaît si la contition est vraie</p>
+<ng-template #otherTemplate>
+  <p>Apparaît si la contition est fausse</p>
+</ng-template>
+

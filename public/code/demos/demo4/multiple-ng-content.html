@@ -1,0 +1,12 @@
+<!--parent.html-->
+<app-product>
+  <p top>Contenu transmis du composant parent au composant enfant</p>
+  <p bottom>Autre contenu transmis du composant parent au composant enfant</p>
+</app-product>
+
+<!--enfant.html-->
+<div>
+  <ng-content select="[top]"></ng-content>
+  <p>Contenu du composant enfant</p>
+  <ng-content select="[bottom]"></ng-content>
+</div>

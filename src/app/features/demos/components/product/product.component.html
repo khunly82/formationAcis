@@ -1,0 +1,14 @@
+<p-card [header]="product.nom">
+  <ng-template pTemplate="header">
+    <img [src]="product.image" [alt]="product.nom" />
+  </ng-template>
+  <ng-content></ng-content>
+  <ng-template pTemplate="footer">
+    <div>
+      <p-button label="Cliquer ici pour renvoyer l'id au parent"
+                severity="danger"
+                (onClick)="clickHandler()"></p-button>
+      <p class="price">{{product.price}}€</p>
+    </div>
+  </ng-template>
+</p-card>

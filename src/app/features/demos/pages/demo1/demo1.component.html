@@ -1,0 +1,38 @@
+<p-card header="Composant">
+  <p>Un composant est une brique de l'application.<br>Chaque composant possède sa propre logique et doit définir un template.</p>
+</p-card>
+
+<p-card header="Schematics">
+  <markdown lineHighlight lineNumbers commandLine src="code/demos/demo1/component-schematic.sh"></markdown>
+</p-card>
+
+<p-card header="Déclaration">
+  <markdown lineNumbers lineHighlight src="/code/demos/demo1/component-declaration.ts"></markdown>
+</p-card>
+
+<p-card header="Inclure un composant enfant">
+
+  <p>demo1.component.ts</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo1/component-child.ts"></markdown>
+  <p>demo1.component.html</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo1/component-child.html"></markdown>
+
+  <!-- selector: app-hello -->
+  <app-hello></app-hello>
+  <!-- selector: .appHello -->
+  <div class="appHello"></div>
+  <!-- selector: [appHello] -->
+  <div appHello></div>
+</p-card>
+
+<p-card header="View encapsulation">
+  <p>Par défaut, l'encapsulation est définie sur « Emulated ». Ça signifie que le style défini dans un composant ne pourra pas modifier celui de ses parents.</p>
+
+  <p>Si l'on souhaite changer ce comportement, il faut modifier la propriété encapsulation.</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo1/view-encapsulation.ts"></markdown>
+
+  <app-non-encapsulated></app-non-encapsulated>
+  <p class="some-class">Le style de ce paragraphe est définit par le composant enfant.</p>
+</p-card>
+
+

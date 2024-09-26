@@ -1,0 +1,72 @@
+<div class="grid">
+  <div class="col-6 px-2">
+    <p-card header="@Input()">
+      <ng-template pTemplate="header">
+        <img src="/images/input.png" alt="input flow">
+      </ng-template>
+      <p>child.component.ts</p>
+      <markdown lineNumbers lineHighlight src="/code/demos/demo4/input.ts"></markdown>
+      <p>parent.component.html</p>
+      <markdown lineNumbers lineHighlight src="/code/demos/demo4/input.html"></markdown>
+    </p-card>
+  </div>
+  <div class="col-6 px-2">
+    <p-card header="@Output()">
+      <ng-template pTemplate="header">
+        <img src="/images/output.png" alt="output flow">
+      </ng-template>
+      <p>child.component.ts</p>
+      <markdown lineNumbers lineHighlight src="/code/demos/demo4/output.ts"></markdown>
+      <p>parent.component.html</p>
+      <markdown lineNumbers lineHighlight src="/code/demos/demo4/output.html"></markdown>
+    </p-card>
+  </div>
+</div>
+
+
+
+<div class="grid">
+  @for(product of products; track product.id) {
+    <div class="col-2 px-1">
+      <app-product [product]="product" (onClick)="onClick($event)"></app-product>
+    </div>
+  }
+</div>
+
+<p-card header="Détection des changements">
+  <p>Pour optimiser un composant enfant, il est possible de modifier la détection des changements.</p>
+  <p><b>Attention</b>, dans ce cas il faut changer la référence de la valeur passée en «input»</p>
+  <p><i>Ce problème est résolu avec la nouvelle syntaxe</i></p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo4/change-detection.ts"></markdown>
+  <div class="flex flex-column gap-1">
+    <p-button (onClick)="changePriceWithoutRef()" label="Modification du prix sans changer la réference (ne fonctionnera pas !!)"></p-button>
+    <p-button (onClick)="changePriceWithRef()" label="Modification du prix en changeant la réference"></p-button>
+  </div>
+</p-card>
+
+<p-card header="@Input() AND @Output()">
+  <p>child.component.ts</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo4/input-output.ts"></markdown>
+  <p>parent.component.html</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo4/input-output.html"></markdown>
+
+  <p>value: {{value}}</p>
+  <app-input-output [(value)]="value"></app-input-output>
+</p-card>
+
+<p-card header="Projection de contenu (ng-content)">
+  <markdown lineNumbers lineHighlight src="/code/demos/demo4/ng-content.html"></markdown>
+
+  <app-content-projection>
+    <p>Contenu transmis du composant <b>parent</b> vers le composant <b>enfant</b></p>
+  </app-content-projection>
+</p-card>
+
+<p-card header="Projection de contenu multiple (ng-content > select)">
+  <markdown lineNumbers lineHighlight src="/code/demos/demo4/multiple-ng-content.html"></markdown>
+  <app-multiple-content-projection>
+      <p top>Contenu transmis du composant <b>parent</b> vers le composant <b>enfant</b></p>
+      <p bottom>Autre contenu transmis du composant <b>parent</b> vers le composant <b>enfant</b></p>
+  </app-multiple-content-projection>
+</p-card>
+

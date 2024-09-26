@@ -1,0 +1,14 @@
+<p-card header="git">
+  <a href="https://github.com/khunly82/formationAcis" target="_blank">https://github.com/khunly82/formationAcis</a>
+</p-card>
+
+<p-card header="Commandes">
+  <ul>
+    @for(command of commands;track $index) {
+      <li>
+        {{command.title}}
+        <markdown lineHighlight lineNumbers [src]="command.file" commandLine></markdown>
+      </li>
+    }
+  </ul>
+</p-card>

@@ -1,0 +1,9 @@
+<ng-template #myOtherTemplate let-context>
+  <p>Ce template affichera des valeurs différentes selon le contexte:</p>
+  <p>Hello {{ context }} !!</p>
+</ng-template>
+
+<p>On peut alors fournir des données différentes au template</p>
+<ng-container *ngTemplateOutlet="myOtherTemplate; context: { $implicit: 'Khun' }"></ng-container>
+<!-- ou -->
+<ng-container [ngTemplateOutlet]="myOtherTemplate" [ngTemplateOutletContext]="{ $implicit: 'Mike' }"></ng-container>

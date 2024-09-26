@@ -1,0 +1,37 @@
+
+<p-card header="Binding">
+  <p>demo2.component.ts</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo2/binding.ts"></markdown>
+  <p>demo2.component.html</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo2/binding.html"></markdown>
+
+  <p>Hello {{ value }}</p>
+</p-card>
+
+<p-card header="Binding 2 ways">
+  <p>demo2.component.html</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo2/binding-two-ways.html"></markdown>
+  <div class="mt-4">
+    <p-floatLabel>
+      <input pInputText [(ngModel)]="value">
+      <label>Value</label>
+    </p-floatLabel>
+  </div>
+</p-card>
+
+<p-card header="Attribute Binding">
+  <p>demo2.component.html</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo2/attribute-binding.html"></markdown>
+
+  <p-button [disabled]="!value">Je suis désactivé si «value» est «falsy» (null, undefined,'', ...)</p-button>
+</p-card>
+
+<p-card header="Event Binding">
+  <p>demo2.component.ts</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo2/event-binding.ts"></markdown>
+
+  <p>demo2.component.html</p>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo2/event-binding.html"></markdown>
+
+  <p-button (click)="clickHandler()">Alert !!</p-button>
+</p-card>

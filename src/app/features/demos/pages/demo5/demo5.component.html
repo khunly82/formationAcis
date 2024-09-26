@@ -1,0 +1,35 @@
+<p-card header="Cycle de vie">
+  Seront abordés ici les principales étapes <b>du cycle de vie</b> d'un composant.
+  Pour plus de détails (<a href="https://angular.dev/guide/components/lifecycle" target="_blank">Angular component life cycle</a>)
+
+  <p-card header="OnInit">
+    La méthode sera appelée à l'initialisation du composant.
+    <markdown lineHighlight lineNumbers src="/code/demos/demo5/on-init.ts"></markdown>
+  </p-card>
+
+  <p-card header="AfterViewInit">
+    La méthode sera appelée après que le template soit chargé.
+    <markdown lineHighlight lineNumbers src="/code/demos/demo5/after-view-init.ts"></markdown>
+  </p-card>
+
+  <p-card header="OnChanges">
+    La méthode est appelée à chaque fois qu'un «input» est modifié (nouvelle valeur, nouvelle référence, signal modifié).
+    <markdown lineHighlight lineNumbers src="/code/demos/demo5/on-changes.ts"></markdown>
+  </p-card>
+
+  <p-card header="OnDestroy">
+    La méthode est appelée lorsque le composant est détruit.
+    <markdown lineHighlight lineNumbers src="/code/demos/demo5/on-destroy.ts"></markdown>
+  </p-card>
+
+</p-card>
+
+<p-card>
+  <div class="mb-2">
+    <p-button [label]="displayed ? 'Cacher' : 'Afficher'" (onClick)="displayed = !displayed"></p-button>
+  </div>
+  @if(displayed) {
+    <app-life-cycle [value]="value"></app-life-cycle>
+    <p-button label="Incrémenter" (onClick)="onClick()"></p-button>
+  }
+</p-card>

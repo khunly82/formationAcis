@@ -1,3 +1,49 @@
-a.active {
-  color: olive;
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  > header {
+    height: 70px;
+    padding: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blue-600);
+    color: white;
+    i {
+      font-size: 2em;
+    }
+  }
+
+  > main {
+    flex-grow: 1;
+    display: flex;
+    > nav {
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      overflow-y: auto;
+      width: 300px;
+      min-width: 300px;
+      background-color: var(--bluegray-900);
+      > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+    > section#content {
+      flex-grow: 1;
+      padding: 1.5em;
+      display: flex;
+      flex-direction: column;
+      > footer {
+        margin-top: auto;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
 }

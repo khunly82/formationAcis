@@ -1,0 +1,84 @@
+<p-card header="*ngIf - else">
+  <markdown lineNumbers lineHighlight src="/code/demos/demo3/ngIf.html"></markdown>
+
+  <div class="mt-4">
+    <p-inputSwitch (onChange)="isLoading = !isLoading"></p-inputSwitch>
+    <label class="ml-2">Toggle to change loading state</label>
+  </div>
+
+  <div class="mt-2">
+    <h2 *ngIf="!isLoading; else loader">Chargement terminé</h2>
+    <ng-template #loader>
+      <h2><i class="pi-spin pi pi-spinner"></i></h2>
+    </ng-template>
+  </div>
+</p-card>
+
+<p-card header="@if - @else">
+  <markdown lineNumbers lineHighlight src="/code/demos/demo3/if.html"></markdown>
+
+  <div class="mt-4">
+    <p-inputSwitch (onChange)="isLoading2 = !isLoading2"></p-inputSwitch>
+    <label class="ml-2">Toggle to change loading state</label>
+  </div>
+
+  <div class="mt-2">
+    @if (!isLoading2) {
+      <h2>Chargement terminé</h2>
+    } @else {
+      <h2><i class="pi-spin pi pi-spinner"></i></h2>
+    }
+  </div>
+</p-card>
+
+<div class="grid">
+  <div class="col-6">
+    <p-card header="*ngFor">
+      <markdown lineNumbers lineHighlight src="/code/demos/demo3/ngFor.html"></markdown>
+
+      <div class="grid">
+        <!--<div *ngFor="let item of items; trackBy: trackFn" class="col-3">-->
+        <div *ngFor="let item of items;" class="col-3 px-1">
+          <p-card>
+            <ng-template pTemplate="header">
+              <img [src]="item.image">
+            </ng-template>
+            {{ item.nom }}
+          </p-card>
+        </div>
+      </div>
+
+    </p-card>
+  </div>
+  <div class="col-6">
+    <p-card header="@for - @empty">
+      <markdown lineNumbers lineHighlight src="/code/demos/demo3/for.html"></markdown>
+
+      <div class="grid">
+        @for (item of items; track item.id) {
+          <div class="col-3 px-1">
+            <p-card>
+              <ng-template pTemplate="header">
+                <img [src]="item.image">
+              </ng-template>
+              {{ item.nom }}
+            </p-card>
+          </div>
+        } @empty {
+          <p>Est afficher si la liste est vide</p>
+        }
+      </div>
+    </p-card>
+  </div>
+  <div class="col-12">
+    <p-card header="Loop Track">
+      <p>Il est possible de définir la valeur sur laquelle les éléments seront «traqués» (généralement l'id). La première boucle n'a pas de «trackBy».</p>
+      <p-button (onClick)="changeBoissons()">Modifier la liste</p-button>
+    </p-card>
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,17 @@
+<a class="link" [routerLink]="item.path" routerLinkActive="active" (click)="toggle()">
+  @if (item.icon) {
+    <span class="icon">
+        <i [class]="item.icon"></i>
+    </span>
+  }
+
+  <span class="link-title">{{ item.title }}<i *ngIf="item.children" class="pi pi-caret-down"></i></span>
+</a>
+
+@if (item.children) {
+  <ul class="submenu" [ngClass]="{ open: item.open }">
+    @for (child of item.children;track $index) {
+      <li appNavLink [item]="child"></li>
+    }
+  </ul>
+}

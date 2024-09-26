@@ -1,0 +1,57 @@
+<p-card>
+  <form [formGroup]="form" (ngSubmit)="save()">
+
+    <div class="flex gap-2 mb-3">
+      <div>
+        <p-floatLabel>
+          <input pInputText formControlName="nom" type="text">
+          <label>Nom</label>
+        </p-floatLabel>
+        <app-form-error [control]="form.controls['nom']"></app-form-error>
+      </div>
+      <div>
+        <p-floatLabel>
+          <input pInputText formControlName="quantite" type="number" step="0.1">
+          <label>Quantité</label>
+        </p-floatLabel>
+        <app-form-error [control]="form.controls['quantite']"></app-form-error>
+      </div>
+    </div>
+
+    <div class="flex gap-2 mb-3">
+      <div>
+        <p-floatLabel>
+          <input pInputText formControlName="prix" type="number" step="0.1">
+          <label>Prix</label>
+        </p-floatLabel>
+        <app-form-error [control]="form.controls['prix']"></app-form-error>
+      </div>
+      <div>
+        <p-floatLabel>
+          <input pInputText formControlName="nutriscore">
+          <label>Nutriscore</label>
+        </p-floatLabel>
+        <app-form-error [control]="form.controls['nutriscore']"></app-form-error>
+      </div>
+    </div>
+    <p>Categorie</p>
+    <div class="flex gap-2 mb-3" [formGroup]="categorieGroup">
+      <div>
+        <p-floatLabel>
+          <input pInputText formControlName="nom" type="text">
+          <label>Nom</label>
+        </p-floatLabel>
+        <app-form-error [control]="categorieGroup.controls['nom']"></app-form-error>
+      </div>
+      <div>
+        <p-floatLabel>
+          <input pInputText formControlName="description" type="text">
+          <label>Description</label>
+        </p-floatLabel>
+        <app-form-error [control]="categorieGroup.controls['description']"></app-form-error>
+      </div>
+    </div>
+    <p-button type="submit" label="Envoyer" icon="pi pi-send"></p-button>
+  </form>
+
+</p-card>

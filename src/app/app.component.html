@@ -1,28 +1,21 @@
-<!--<app-hello></app-hello>-->
-<!--<p>paragraphe le l'app component</p>-->
+<header>
+  <h1>Formation ACIS</h1>
+  <p><i class="pi pi-shopping-cart" pBadge [value]="nbItems()"></i></p>
+</header>
 
-<!--<app-chrono></app-chrono>-->
-
-<!--@for (product of products; track product.nom) {-->
-<!--  <app-product [product]="product"-->
-<!--               (onDelete)="deleteHandler($event)">-->
-<!--    {{ product.description }}-->
-<!--    <ng-template #sub>-->
-<!--      test 1234-->
-<!--    </ng-template>-->
-<!--  </app-product>-->
-<!--}-->
-
-<header>{{ nbItems() }} éléments dans le panier</header>
-<nav>
-  <ul>
-    <li><a routerLink="/home" routerLinkActive="active">Accueil</a></li>
-    <li><a routerLink="/courses" routerLinkActive="active">Liste de courses</a></li>
-  </ul>
-</nav>
-<router-outlet></router-outlet>
-<footer>
-  My footer
-</footer>
+<main>
+  <nav>
+    <ul>
+      @for (link of links;track $index) {
+        <li appNavLink [item]="link"></li>
+      }
+    </ul>
+  </nav>
+  <section id="content">
+    <router-outlet></router-outlet>
+    <footer>&copy; 2024 - BStorm (Formation ACIS)</footer>
+  </section>
+</main>
 
 <p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>

@@ -1,0 +1,27 @@
+{
+  "articles": [
+    {
+      "nom": "Poires",
+      "nutriscore": "a",
+      "prix": 1.2,
+      "categorie": {
+        "nom": "Fruit",
+        "description": null
+      },
+      "tags": [],
+      "quantite": 100,
+      "estImportant": true,
+      "id": "e082"
+    },
+    {
+      "id": "7ed5",
+      "nom": "Tomates",
+      "estImportant": false
+    },
+    {
+      "id": "2c01",
+      "nom": "test",
+      "estImportant": true
+    }
+  ]
+}

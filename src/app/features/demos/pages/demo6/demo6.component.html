@@ -1,0 +1,38 @@
+<p-card header="ng-template">
+  <p>Permet de définir un template qui ne sera pas «Render» par défaut dans un composant.</p>
+
+  <markdown lineNumbers lineHighlight src="/code/demos/demo6/ng-template.html"></markdown>
+
+  <ng-template #myTemplate>
+    <p-card>Ce template n'est pas affiché par défaut</p-card>
+  </ng-template>
+
+  <p>On peut alors utilser une directives structurelles pout l'afficher (*ngIf, *ngFor, *ngTemplateOutlet, ...)</p>
+  <ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+  <p>À différents endroits</p>
+  <ng-container [ngTemplateOutlet]="myTemplate"></ng-container>
+</p-card>
+
+<p-card header="Contexte">
+  <p>On peut fournir un context à un template</p>
+
+  <markdown lineNumbers lineHighlight src="/code/demos/demo6/ng-template-context.html"></markdown>
+
+  <ng-template #myOtherTemplate let-context>
+    <p-card>
+      <p>Ce template affichera des valeurs différentes selon le contexte:</p>
+      <p>Hello {{ context }} !!</p>
+    </p-card>
+  </ng-template>
+
+  <p>On peut alors fournir des données différentes au template</p>
+  <ng-container *ngTemplateOutlet="myOtherTemplate; context: { $implicit: 'Khun' }"></ng-container>
+  <ng-container [ngTemplateOutlet]="myOtherTemplate" [ngTemplateOutletContext]="{ $implicit: 'Mike' }"></ng-container>
+</p-card>
+
+<p-card>
+  <i>Remarque: <b>&lt;ng-container&gt;&lt;/ng-container&gt;</b> est souvent utilisé avec des directives structurelles pour ne pas créer de balise englobante.</i>
+  <markdown lineNumbers lineHighlight src="/code/demos/demo6/ng-container.html"></markdown>
+  <div *ngTemplateOutlet="myTemplate"></div>
+  <p>Ici une div est ajoutée autour du template</p>
+</p-card>

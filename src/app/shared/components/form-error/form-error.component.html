@@ -1,0 +1,17 @@
+@if(control.invalid && !control.disabled && (!control.untouched || control.dirty)) {
+  @if(control.getError('required')) {
+    <small>Le champs est requis</small>
+  }
+  @if(control.getError('in')) {
+    <small>La valeur n'est pas autorisée</small>
+  }
+  @if(control.getError('maxlength')) {
+    <small>max: {{ control.getError('maxlength').requiredLength }}</small>
+  }
+  @if(control.getError('min')) {
+    <small>Trop petit</small>
+  }
+  @if(control.getError('max')) {
+    <small>Trop grand</small>
+  }
+}
